@@ -17,11 +17,12 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
-          <Route index element={< Home />} />
+          <Route index element={< Home />} />      
+          
           {<Route
             path="/cats/list"
             element={
-              <Suspense fallback={null}>
+              <Suspense fallback={<div>'...Loading data'</div>}>
                 <CatsList />
               </Suspense>
             }
@@ -29,11 +30,12 @@ const App: React.FC = () => {
           {<Route
             path="/cats/card"
             element={
-              <Suspense fallback={null}>
+              <Suspense fallback={<div>'...Loading data'</div>}>
                 <Card />
               </Suspense>
             }
           />}
+         
         </Route>
       </Routes>
     </BrowserRouter>

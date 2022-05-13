@@ -1,5 +1,5 @@
 import { useTypedSelector } from "../../hooks/useTypeSelector";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import { useActions } from "../../hooks/useAction";
 import { ICatModel, ISearchCatByColour } from '../CatsList/types';
 import { useNavigate } from "react-router";
@@ -12,7 +12,7 @@ const CatsList: React.FC = () => {
     const { fetchAllKitty, fetchByColour ,fetchByCharacter,addToCard} = useActions();    
     const navigator = useNavigate();    
     const [query, setQuery] = useState<string>(window.location.search);
-
+ 
     async function getByColor(search: ISearchCatByColour) {
 
         try {
